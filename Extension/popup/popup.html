@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vera</title>
+    <link rel="icon" href="../icons/favicon-vera.png" type="image/png">
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="../icons/icon-48V.png" alt="Vera" class="logo">
+            <span class="header-text">Vera</span>
+
+            <!--img src="../icons/settings.svg" alt="Settings" class="settings-icon"-->
+        </div>
+        <div class="content">
+            <!-- Added Email Display -->
+            <!--div class="email-display">Logged in as: <span id="user-email">Email not available</span></div-->
+
+            <div class="vertical-spacer"></div>
+
+            <div class="url" id="url"></div>
+            
+            <div class="accuracy-score-section">
+                <div class="accuracy-score">
+                    <div class="score-circle">
+                        <span class="score" id="accuracy-score"></span>
+                        <div class="score-label">Accuracy Score</div>
+                    </div>
+
+                    <div class="quote" id="quote"></div>
+                </div>
+            </div>
+
+            <div class="vertical-spacer"></div>
+            <div class="vertical-spacer"></div>
+
+            <div class="sources">
+                <div class="source-title"><span id="verified-count"></span></div>
+                <div class="source-title"><span id="total-sources-count"></span></div>
+
+                <ul id="source-list">
+                    <!-- Source items will be added here dynamically -->
+                </ul>
+            </div>
+
+            <div class="vertical-spacer"></div>
+            <div class="vertical-spacer"></div>
+
+            <div class="summary" id="summary"></div>
+        </div>
+    </div>
+    <script src="popup.js" defer></script>
+</body>
+</html>

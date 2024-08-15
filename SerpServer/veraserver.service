@@ -1,0 +1,15 @@
+[Unit]
+Description=Vera Server app managed by Forever
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/home/ec2-user/VeraAI/SerpServer
+ExecStart=/usr/bin/forever start -l forever.log -o veraserver-out.log -e veraserver-err.log -a --minUptime 2000 --spinSleepTime 4000 veraserver.js
+ExecStop=/usr/bin/forever stop veraserver.js
+Restart=always
+RestartSec=10  # Restart service after 10 seconds if it crashes
+
+[Install]
+WantedBy=multi-user.target

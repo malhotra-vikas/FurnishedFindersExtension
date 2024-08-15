@@ -1,0 +1,238 @@
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    width: 450px;
+}
+
+.container {
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start */
+    margin-bottom: 10px;
+
+    color: #333;
+    border: 2px solid #ccc;
+    background-color: #e0e0e0;
+    padding: 10px 10px; 
+    border-radius: 10px;
+}
+.header-text {
+    color: #333;
+    font-weight: bold;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px; /* Adjust space between logo and text as needed */
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.settings-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+.content {
+    padding: 10px;
+}
+
+.url {
+    margin-bottom: 10px;
+    text-decoration: none; /* Remove default underline */
+    color: #007bff; /* Set link color */
+    cursor: pointer; /* Change cursor to pointer */
+
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5); /* Faint grey line */
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: left; /* Optional: Align the URL text to the left */
+}
+
+.url a {
+    background-image: url('../icons/verify-bullet.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%; /* Adjusts the position of the bullet to the left and vertically centers it */
+    background-size: 20px; /* Adjusts the size of your bullet */
+    padding-left: 30px; /* Gives space between the bullet and the text */
+    padding-right: 10px; /* Gives space between the bullet and the text */
+    margin-bottom: 10px; /* Optional: Adds space between list items */
+    margin: 10px 0; /* Add some space between list items */
+}
+
+.url img {
+    background-size: 30px; /* Adjusts the size of your bullet */
+}
+
+
+.accuracy-score-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5); /* Faint grey line */
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.accuracy-score {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* This will push the score and the quote to opposite ends of the container */
+    padding: 10px 0; /* Optional: Adds vertical padding for better spacing */
+}
+
+.score {
+    font-size: 1em;
+    color: #333;
+}
+
+.under-score {
+    margin-top: 130px;
+    font-size: 16px;
+    color: #333;
+}
+
+.score-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 5px solid #4caf50; /* Default green */
+    background-color: transparent; /* Make the inside of the circle transparent */ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto;
+    flex-shrink: 0;
+    margin-right: 40px; /* Adds horizontal space between the score circle and the quote */
+    flex-direction: column; /* Allows vertical alignment of score and label */
+}
+
+.blurred {
+    filter: blur(4px);
+}
+
+.quote {
+    flex-grow: 1; /* Allows the quote to take up any remaining space */
+    margin-top: 10px;
+    color: #333;
+    margin: 0;
+    font-style: italic;
+    text-align: left;
+}
+
+.sources {
+    margin-bottom: 10px;
+}
+
+.bullet {
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+}
+
+.source-title {
+    margin-bottom: 10px;
+}
+
+#source-list {
+    list-style-type: none; /* Removes default list styling */
+    padding: 0; /* Adjust or remove default padding */
+}
+
+#source-list li {
+    background-image: url('../icons/green-bullet.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%; /* Adjusts the position of the bullet to the left and vertically centers it */
+    background-size: 20px; /* Adjusts the size of your bullet */
+    padding-left: 30px; /* Gives space between the bullet and the text */
+    padding-right: 10px; /* Gives space between the bullet and the text */
+
+    margin-bottom: 10px; /* Optional: Adds space between list items */
+    margin: 10px 0; /* Add some space between list items */
+}
+
+#source-list li a {
+    text-decoration: none; /* Remove default underline */
+    color: #007bff; /* Set link color */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+#source-list li a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #0056b3; /* Change color on hover */
+}
+
+#source-list li a:active {
+    color: #004085; /* Change color when active/clicked */
+}
+
+.vertical-spacer {
+    margin-top: 20px; /* Adjust the value as needed */
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #1a0dab;
+    word-wrap: break-word;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.summary {
+    color: #333;
+    border: 2px solid #ccc;
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.score-label {
+    text-align: center;
+    font-size: 10px;
+    color: black;
+}
+  
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

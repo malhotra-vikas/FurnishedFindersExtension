@@ -1,0 +1,412 @@
+.verascreen-container {
+  width: 100%;
+  width: 450px;
+  height: 800px;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.verascreen-verascreen {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+.verascreen-rectangle1 {
+  top: 0px;
+  left: 0px;
+  width: 420px;
+  height: 100px;
+  position: absolute;
+}
+.verascreen-header {
+  top: 20px;
+  left: 24px;
+  width: 400px;
+  height: 68px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.verascreen-line1 {
+  top: 68px;
+  left: 2.842170943040401e-14px;
+  width: 400px;
+  height: 1px;
+  position: absolute;
+}
+.verascreen-ellipse1 {
+  top: 0px;
+  left: 0px;
+  width: 52px;
+  height: 52px;
+  position: absolute;
+}
+.verascreen-verav2white1 {
+  top: 9.199999809265137px;
+  left: 3.680000066757202px;
+  width: 47px;
+  height: 39px;
+  position: absolute;
+}
+.verascreen-setting1 {
+  top: 9.199999809265137px;
+  left: 368px;
+  width: 29px;
+  height: 29px;
+  position: absolute;
+}
+.verascreen-text {
+  top: 121px;
+  left: 49px;
+  color: rgba(0, 0, 0, 1);
+  width: 342px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.verascreen-a41 {
+  top: 111px;
+  left: 9px;
+  width: 36px;
+  height: 37px;
+  position: absolute;
+}
+.verascreen-line11 {
+  top: 164px;
+  left: 15px;
+  width: 400px;
+  height: 1px;
+  position: absolute;
+}
+.verascreen-web {
+  top: 185px;
+  left: 15px;
+  width: 202px;
+  height: 133px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.verascreen-text02 {
+  top: 113px;
+  color: rgba(64, 64, 64, 1);
+  width: 202px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.verascreen-a51 {
+  top: 0px;
+  left: 44px;
+  width: 116px;
+  height: 112px;
+  position: absolute;
+}
+.verascreen-text04 {
+  top: 46px;
+  color: rgba(64, 64, 64, 1);
+  width: 202px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.verascreen-web1 {
+  top: 197px;
+  left: 15px;
+  width: 403px;
+  height: 167px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.verascreen-text06 {
+  left: 201px;
+  color: rgba(64, 64, 64, 1);
+  width: 202px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.verascreen-line2 {
+  top: 167px;
+  left: 0px;
+  width: 400px;
+  height: 1px;
+  position: absolute;
+}
+
+.verascreen-results {
+  top: 375px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 15px;
+  width: 100%;
+  position: absolute;
+}
+
+.verascreen-text08 {
+  color: rgba(64, 64, 64, 1);
+  width: 346px;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 20px;
+  margin-top: 20px; /* Add some margin for spacing */
+}
+
+.verascreen-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-shrink: 1;
+}
+
+.verascreen-text10 {
+  color: rgba(47, 125, 255, 1);
+  width: 346px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 10px;
+}
+
+.verascreen-dot2 {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px; /* Adjust spacing as needed */
+}
+
+.verascreen-summary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* Add margin for spacing */
+}
+
+#source-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between each link */
+  margin-top: 20px; /* Add some top margin for spacing */
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.vera-spinner {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #000000; /* Black */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+}
+
+.loading-text {
+  margin-top: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  color: #000000;
+}
+.verascreen-text18 {
+  left: 27px;
+  color: rgba(47, 125, 255, 1);
+  width: 346px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.verascreen-text20 {
+  top: 25px;
+  left: 27px;
+  color: rgba(139, 139, 139, 1);
+  width: 346px;
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.verascreen-dot22 {
+  top: 0px;
+  left: 0px;
+  width: 22px;
+  height: 21px;
+  position: absolute;
+}
+.verascreen-text22 {
+  top: 820px;
+  left: 35px;
+  color: rgba(139, 139, 139, 1);
+  width: 346px;
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+  padding: 25px
+}
+
+.verascreen-text24 {
+  left: 27px;
+  color: rgba(47, 125, 255, 1);
+  width: 346px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.verascreen-text26 {
+  top: 25px;
+  left: 27px;
+  color: rgba(139, 139, 139, 1);
+  width: 346px;
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.verascreen-dot23 {
+  top: 0px;
+  left: 0px;
+  width: 22px;
+  height: 21px;
+  position: absolute;
+}
+.verascreen-rectangle17 {
+  top: 710px;
+  left: 15px;
+  width: 400px;
+  height: 123px;
+  position: absolute;
+}
+.verascreen-text28 {
+  top: 720px;
+  left: 44px;
+  color: #818181;
+  width: 348px;
+  min-height: 75px; /* Minimum height to start with, can adjust as needed */
+  overflow: auto; /* Allows scrolling within the element if content exceeds its height */
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 26px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.verascreen-text29 {
+  color: #818181;
+  font-weight: 500;
+}
+.verascreen-text30 {
+  color: #818181;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Inter;
+}
+
+.vertical-spacer {
+  margin-top: 20px; /* Adjust the value as needed */
+  margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.blur-content {
+  filter: blur(8px);
+}

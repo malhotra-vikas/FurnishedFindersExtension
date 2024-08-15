@@ -1,0 +1,79 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 800px;
+    margin: 0;
+    font-size: 16px;
+}
+
+p {
+    text-align: left;
+}
+
+.activation-container {
+    background-color: rgb(255, 255, 255); /* Set to white */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    width: 450px;
+    height: 800px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.content {
+    background-color: inherit;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.status {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.status .status-icon {
+    color: green;
+}
+
+.content .step {
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+}
+
+.content img {
+    width: 80%; /* Set image width to 80% of the container */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.content .step p {
+    color: #333;
+}

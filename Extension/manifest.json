@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Furnished Finder Message Extractor",
+    "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.furnishedfinder.com/members/Tenant-Message",
+                "https://www.furnishedfinder.com/members/messages*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
