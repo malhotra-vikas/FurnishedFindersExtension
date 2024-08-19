@@ -1,6 +1,6 @@
 // background.js
 chrome.action.onClicked.addListener((tab) => {
-    console.log('Extension icon clicked, opening Furnished Finder...');
+    logMessage('Extension icon clicked, opening Furnished Finder...');
     chrome.tabs.create({ url: "https://www.furnishedfinder.com/members/Tenant-Message" });
 });
 

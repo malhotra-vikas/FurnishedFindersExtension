@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (window.location.href.includes('members/messages')) {
         logMessage("Starting to reply and print chat history");
-
+    
         // Print everything in the div with id "divChatHistory"
         // Delay execution to ensure the content is fully loaded
         setTimeout(() => {
             printChatHistory();
         }, 2000);  // Adjust delay time as necessary
-
+    
         logMessage("Done printing chat history");
 
         //insertReplyMessageAndCloseTab();
@@ -78,31 +78,38 @@ function printChatHistory() {
 //setTimeout(printChatHistory, 5000);  // Delay of 5 seconds (5000 milliseconds)
 
 function insertReplyMessageAndCloseTab() {
-    logMessage('Inserting reply message');
 
     // Define a function that attempts to find the textarea and insert the message
-    function attemptInsert() {
+    function attemptInsert(retryCount = 0) {
         const replyTextBox = document.getElementById('NewReply');
         const sendButton = document.getElementById('btnSend');
         const chatHistoryDiv = document.getElementById('divChatHistory');
         const messageElements = chatHistoryDiv ? chatHistoryDiv.querySelectorAll('.message-content') : [];
 
         logMessage('Number of messages elements found: ' + messageElements.length);
+        if (messageElements.length > 1) {
+            // Close the tab after the message is inserted
+            //chrome.runtime.sendMessage({ action: 'closeTab' });            
+        }
 
         if (replyTextBox && sendButton && (messageElements.length == 1)) {
-            replyTextBox.value = "Thank you for your message. I will get back to you shortly."; // Your static message
+            replyTextBox.value = "Hi there!\n\nThank you for reaching out to StayRN. We specialize in providing comfortable, fully furnished housing for travel nurses and healthcare professionals in the Denver Metro area. Our team is dedicated to making your stay as seamless and enjoyable as possible.\n\nWe’ve received your message and will get back to you shortly to assist you further.\n\nWarm regards,\nThe StayRN Team";
 
             logMessage('Message inserted successfully.');
 
             // Simulate a click on the "Send" button
-            sendButton.click();
+            //sendButton.click();
             logMessage('Send button clicked.');
 
             // Close the tab after the message is inserted
             //chrome.runtime.sendMessage({ action: 'closeTab' });
         } else {
-            console.error('Reply text box not found. Retrying...');
-            setTimeout(attemptInsert, 500); // Retry after 500ms if the element is not found
+            if (retryCount < 5) {
+                console.debug('Reply text box not found or no messages present. Retrying...');
+                setTimeout(() => attemptInsert(retryCount + 1), 500);
+            } else {
+                console.debug('Failed to insert reply after several attempts.');
+            }
         }
     }
     setTimeout(attemptInsert, 1000);
