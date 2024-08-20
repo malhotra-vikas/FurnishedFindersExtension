@@ -89,7 +89,7 @@ function insertReplyMessageAndCloseTab() {
         logMessage('Number of messages elements found: ' + messageElements.length);
         if (messageElements.length > 1) {
             // Close the tab after the message is inserted
-            //chrome.runtime.sendMessage({ action: 'closeTab' });            
+            chrome.runtime.sendMessage({ action: 'closeTab' });            
         }
 
         if (replyTextBox && sendButton && (messageElements.length == 1)) {
