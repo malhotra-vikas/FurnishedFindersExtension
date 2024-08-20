@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Furnished Finder Message Extractor",
+    "name": "Furnished Finder Autoresponder",
     "version": "1.0",
     "permissions": [
         "activeTab",
