@@ -1,4 +1,51 @@
 // background.js
+chrome.runtime.onInstalled.addListener(() => {
+    // Run the function initially when the extension is installed/loaded
+    startPeriodicTask();
+});
+
+chrome.runtime.onStartup.addListener(() => {
+    // Also run when the Chrome restarts
+    startPeriodicTask();
+});
+
+function startPeriodicTask() {
+    setInterval(() => {
+        // Obtain all tabs with the specific URL
+        chrome.tabs.query({url: "https://www.furnishedfinder.com/members/Tenant-Message*"}, function(tabs) {
+            if (tabs.length > 0) {
+                const tabId = tabs[0].id;
+                chrome.scripting.executeScript({
+                    target: {tabId: tabId},
+                    files: ['content.js']
+                }, () => {
+                    // Check for errors in executing the script
+                    if (chrome.runtime.lastError) {
+                        console.error('Script injection failed:', chrome.runtime.lastError.message);
+                    } else {
+                        // Close the tab after the script is executed
+                        chrome.tabs.remove(tabId, () => {
+                            if (chrome.runtime.lastError) {
+                                console.error('Failed to close tab:', chrome.runtime.lastError.message);
+                            } else {
+                                console.log('Tab closed successfully.');
+                            }
+                        });
+                    }
+                });
+            } else {
+                // If no tab is open, create a new tab and inject the script
+                chrome.tabs.create({ url: "https://www.furnishedfinder.com/members/Tenant-Message" }, function(tab) {
+                    chrome.scripting.executeScript({
+                        target: {tabId: tab.id},
+                        files: ['content.js']
+                    });
+                });
+            }
+        });
+    }, 15000);  
+}
+
 chrome.action.onClicked.addListener((tab) => {
     logMessage('Extension icon clicked, opening Furnished Finder...');
     chrome.tabs.create({ url: "https://www.furnishedfinder.com/members/Tenant-Message" });
