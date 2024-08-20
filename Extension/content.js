@@ -87,13 +87,31 @@ function insertReplyMessageAndCloseTab() {
         const messageElements = chatHistoryDiv ? chatHistoryDiv.querySelectorAll('.message-content') : [];
 
         logMessage('Number of messages elements found: ' + messageElements.length);
-        if (messageElements.length > 1) {
-            // Close the tab after the message is inserted
-            chrome.runtime.sendMessage({ action: 'closeTab' });            
+        let bookingRequestInfoMatch = false
+        let inquiryRequestInfoMatch = false
+        let alternateBookingRequestInfoMatch = false
+
+        // Check if there are any message elements before trying to access them
+        if (messageElements.length > 0) {
+            // Access the last message element and retrieve its text content
+            const lastMessage = messageElements[messageElements.length - 1].textContent.trim();
+            logMessage('Printing the most recent message: ' + lastMessage);
+
+            bookingRequestInfoMatch = lastMessage.includes("sent a Booking Request and is interested in booking your property")
+            logMessage('Is bookingRequest: ' + bookingRequestInfoMatch);
+
+            inquiryRequestInfoMatch = lastMessage.includes("following traveler has inquired about your property")
+            logMessage('Is inquiryRequestInfoMatch: ' + inquiryRequestInfoMatch);
+
+            alternateBookingRequestInfoMatch = lastMessage.includes("They will be traveling to")
+            logMessage('Is alternateBookingRequestInfoMatch: ' + alternateBookingRequestInfoMatch);
+        } else {
+            // Log a message if no message elements were found
+            logMessage('No messages found.');
         }
 
-        if (replyTextBox && sendButton && (messageElements.length == 1)) {
-            replyTextBox.value = "Hi there!\n\nThank you for reaching out to StayRN. We specialize in providing comfortable, fully furnished housing for travel nurses and healthcare professionals in the Denver Metro area. Our team is dedicated to making your stay as seamless and enjoyable as possible.\n\nWe’ve received your message and will get back to you shortly to assist you further.\n\nWarm regards,\nThe StayRN Team";
+        if (replyTextBox && sendButton && (bookingRequestInfoMatch || alternateBookingRequestInfoMatch)) {
+            replyTextBox.value = "Hi there!\n\nThank you for reaching out to StayRN with your booking request. We specialize in providing comfortable, fully furnished housing for travel nurses and healthcare professionals in the Denver Metro area. Our team is dedicated to making your stay as seamless and enjoyable as possible.\n\nWe’ve received your message and will get back to you shortly to assist you further.\n\nWarm regards,\nThe StayRN Team";
 
             logMessage('Message inserted successfully.');
 
@@ -103,6 +121,19 @@ function insertReplyMessageAndCloseTab() {
 
             // Close the tab after the message is inserted
             //chrome.runtime.sendMessage({ action: 'closeTab' });
+        } else if (replyTextBox && sendButton && inquiryRequestInfoMatch) {
+            replyTextBox.value = "Hi there!\n\nThank you for reaching out to StayRN with your inquiry. We specialize in providing comfortable, fully furnished housing for travel nurses and healthcare professionals in the Denver Metro area. Our team is dedicated to making your stay as seamless and enjoyable as possible.\n\nWe’ve received your message and will get back to you shortly to assist you further.\n\nWarm regards,\nThe StayRN Team";
+
+            logMessage('Message inserted successfully.');
+
+            // Simulate a click on the "Send" button
+            //sendButton.click();
+            logMessage('Send button clicked.');
+
+            // Close the tab after the message is inserted
+            //chrome.runtime.sendMessage({ action: 'closeTab' });
+        } else if (replyTextBox && sendButton && (!inquiryRequestInfoMatch && !bookingRequestInfoMatch && !alternateBookingRequestInfoMatch)) {
+            chrome.runtime.sendMessage({ action: 'closeTab' });            
         } else {
             if (retryCount < 5) {
                 console.debug('Reply text box not found or no messages present. Retrying...');
@@ -111,6 +142,11 @@ function insertReplyMessageAndCloseTab() {
                 console.debug('Failed to insert reply after several attempts.');
             }
         }
+
+        if (messageElements.length > 1) {
+            // Close the tab after the message is inserted
+//            chrome.runtime.sendMessage({ action: 'closeTab' });            
+        }        
     }
     setTimeout(attemptInsert, 1000);
 
