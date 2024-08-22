@@ -111,27 +111,27 @@ function insertReplyMessageAndCloseTab() {
         }
 
         if (replyTextBox && sendButton && (bookingRequestInfoMatch || alternateBookingRequestInfoMatch)) {
-            replyTextBox.value = "Hi there!\n\nThank you for reaching out to StayRN with your booking request. We specialize in providing comfortable, fully furnished housing for travel nurses and healthcare professionals in the Denver Metro area. Our team is dedicated to making your stay as seamless and enjoyable as possible.\n\nWe’ve received your message and will get back to you shortly to assist you further.\n\nWarm regards,\nThe StayRN Team";
+            replyTextBox.value = "Hi there!\n\nThank you for reaching out to StayRN with your booking request. We specialize in providing comfortable, fully furnished housing for travel nurses and healthcare professionals in the Denver Metro area. Our team is dedicated to making your stay as seamless and enjoyable as possible.\n\nWe have received your message and will get back to you shortly to assist you further.\n\nWarm regards,\nThe StayRN Team";
 
             logMessage('Message inserted successfully.');
 
             // Simulate a click on the "Send" button
-            //sendButton.click();
+            sendButton.click();
             logMessage('Send button clicked.');
 
             // Close the tab after the message is inserted
-            //chrome.runtime.sendMessage({ action: 'closeTab' });
+            chrome.runtime.sendMessage({ action: 'closeTab' });
         } else if (replyTextBox && sendButton && inquiryRequestInfoMatch) {
-            replyTextBox.value = "Hi there!\n\nThank you for reaching out to StayRN with your inquiry. We specialize in providing comfortable, fully furnished housing for travel nurses and healthcare professionals in the Denver Metro area. Our team is dedicated to making your stay as seamless and enjoyable as possible.\n\nWe’ve received your message and will get back to you shortly to assist you further.\n\nWarm regards,\nThe StayRN Team";
+            replyTextBox.value = "Hi there!\n\nThank you for reaching out to StayRN with your inquiry. We specialize in providing comfortable, fully furnished housing for travel nurses and healthcare professionals in the Denver Metro area. Our team is dedicated to making your stay as seamless and enjoyable as possible.\n\nWe have received your message and will get back to you shortly to assist you further.\n\nWarm regards,\nThe StayRN Team";
 
             logMessage('Message inserted successfully.');
 
             // Simulate a click on the "Send" button
-            //sendButton.click();
+            sendButton.click();
             logMessage('Send button clicked.');
 
             // Close the tab after the message is inserted
-            //chrome.runtime.sendMessage({ action: 'closeTab' });
+            chrome.runtime.sendMessage({ action: 'closeTab' });
         } else if (replyTextBox && sendButton && (!inquiryRequestInfoMatch && !bookingRequestInfoMatch && !alternateBookingRequestInfoMatch)) {
             chrome.runtime.sendMessage({ action: 'closeTab' });            
         } else {
