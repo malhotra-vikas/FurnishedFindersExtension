@@ -11,6 +11,8 @@ chrome.runtime.onStartup.addListener(() => {
 
 function startPeriodicTask() {
     setInterval(() => {
+        logMessage('Timer snooze over. Running the Extension');
+
         // Obtain all tabs with the specific URL
         chrome.tabs.query({url: "https://www.furnishedfinder.com/members/Tenant-Message*"}, function(tabs) {
             if (tabs.length > 0) {
@@ -43,7 +45,7 @@ function startPeriodicTask() {
                 });
             }
         });
-    }, 15000);  
+    }, 120000);  
 }
 
 chrome.action.onClicked.addListener((tab) => {

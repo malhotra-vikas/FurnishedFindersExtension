@@ -158,6 +158,12 @@ function extractMessagesAndOpenTabs() {
 
     const messageElements = document.querySelectorAll('.card.mb-3.p-4'); // Update this selector if needed
     const messageLinks = [];
+    logMessage('messageElements size', messageElements.length);
+
+    if (messageElements.length == 0) {
+        logMessage('Check if you are logged out');
+    }
+
 
     messageElements.forEach((messageElement) => {
         const link = messageElement.querySelector('.msg-username a')?.href;
