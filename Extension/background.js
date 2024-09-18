@@ -28,7 +28,7 @@ function startPeriodicTask() {
                         // Close the tab after the script is executed
                         chrome.tabs.remove(tabId, () => {
                             if (chrome.runtime.lastError) {
-                                console.error('Failed to close tab:', chrome.runtime.lastError.message);
+                                console.log('Failed to close tab:', chrome.runtime.lastError.message);
                             } else {
                                 console.log('Tab closed successfully.');
                             }
@@ -45,7 +45,7 @@ function startPeriodicTask() {
                 });
             }
         });
-    }, 120000);  
+    }, 60000);  // 1 minute = 60000 milliseconds
 }
 
 chrome.action.onClicked.addListener((tab) => {
@@ -66,7 +66,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (sender.tab) {
             chrome.tabs.remove(sender.tab.id);
         } else {
-            console.error('Cannot close tab: sender.tab is undefined');
+            console.log('Cannot close tab: sender.tab is undefined');
         }
     }
 });
